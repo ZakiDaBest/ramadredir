@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Method 1: Meta Refresh (1 second delay) -->
+    <meta http-equiv="refresh" content="1; url=https://youtube.com" />
+    <title>Redirecting...</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3b82f6;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 h-screen flex items-center justify-center">
+
+    <div class="bg-white p-8 rounded-lg shadow-md text-center max-w-md w-full mx-4">
+        <div class="flex justify-center mb-6">
+            <div class="loader"></div>
+        </div>
+        
+        <h1 class="text-2xl font-bold text-gray-800 mb-2">Redirecting</h1>
+        <p class="text-gray-600 mb-6">
+            Please wait while we take you to your destination.
+        </p>
+        
+        <div class="p-4 bg-blue-50 rounded-md border border-blue-100">
+            <p class="text-sm text-blue-800 mb-2">If you are not redirected automatically:</p>
+            <a href="https://youtube.com" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded transition-colors duration-200">
+                Click here to continue
+            </a>
+        </div>
+        
+        <p class="mt-6 text-xs text-gray-400">Target: https://youtube.com</p>
+    </div>
+
+    <script>
+        // Method 2: JavaScript Redirect (Backup)
+        window.onload = function() {
+            setTimeout(function() {
+                window.location.href = "https://youtube.com";
+            }, 1000); // 1000ms = 1 seconds
+        };
+    </script>
+</body>
+</html>
